@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Curiousity</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="curiousity.css">  
+</head>
+<body>
+
+<div class="ai-box">
+
+  <button class="curious-back-btn" onclick="smartBack()">⟵ SARI GURU</button>
+
+  <img src="item.png" class="curious-img">
+  <audio id="bgm" autoplay loop>
+    <source src="aud.mp3" type="audio/mpeg">
+
+  </audio> 
+
+  
+
+  <div class="curious-text">
+    <span>ohh really ??</span>
+    <span>Curious to visit this site</span>
+    <span>then go back and tap first option</span>
+    <span>enter given password by Admin</span>
+  </div>
+
+</div>
+
+<script>
+window.onload = function () {
+    var audio = document.getElementById("bgm");
+    audio.play().catch(function(){
+        // If browser blocks autoplay, play after first click
+        document.body.addEventListener("click", function () {
+            audio.play();
+        });
+    });
+};
+function smartBack(){
+  history.length > 1 ? history.back() : location.href="index.html";
+}
+</script>
+</body>
+</html>
+
+
